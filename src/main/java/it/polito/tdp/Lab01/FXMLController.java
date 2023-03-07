@@ -19,6 +19,9 @@ public class FXMLController {
 
     @FXML
     private URL location;
+    
+    @FXML
+    private Button btnCancella;
 
     @FXML
     private Button btnInserisci;
@@ -31,15 +34,35 @@ public class FXMLController {
 
     @FXML
     private TextArea txtResult;
+    
+    @FXML
+    private TextArea txtTime;
 
     @FXML
     void doInsert(ActionEvent event) {
-
+    	elenco.addParola(this.txtParola.getText());
+        this.txtResult.clear();
+    	for (String s : elenco.getElenco())
+    		this.txtResult.appendText(s+"\n");
+    	this.txtTime.setText(""+System.nanoTime());
     }
 
     @FXML
     void doReset(ActionEvent event) {
+    	elenco.reset();
+    	this.txtResult.clear();
+    	this.txtTime.setText(""+System.nanoTime());
 
+    }
+    
+    @FXML
+    void cancellaParola(ActionEvent event) {
+    	elenco.removeParola(this.txtParola.getText());
+    	this.txtResult.clear();
+    	for (String s : elenco.getElenco())
+    		this.txtResult.appendText(s+"\n");
+    	this.txtTime.setText(""+System.nanoTime());
+    		
     }
 
     @FXML

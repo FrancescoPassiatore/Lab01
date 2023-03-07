@@ -6,7 +6,10 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -43,11 +46,21 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </TextArea>
-            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" text="Reset">
-               <VBox.margin>
-                  <Insets bottom="5.0" left="230.0" right="5.0" top="5.0" />
-               </VBox.margin>
-            </Button>
+            <GridPane>
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.39995574951172" minWidth="10.0" prefWidth="159.9999755859375" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.79998779296875" minWidth="10.0" prefWidth="89.60002441406252" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.20001220703125" minWidth="10.0" prefWidth="51.20001220703125" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" text="Reset" GridPane.columnIndex="2" />
+                  <Button fx:id="btnCancella" mnemonicParsing="false" onAction="#cancellaParola" prefHeight="26.0" prefWidth="82.0" text="Cancella" GridPane.columnIndex="1" />
+                  <TextArea fx:id="txtTime" prefHeight="30.0" prefWidth="30.0" />
+               </children>
+            </GridPane>
          </children>
       </VBox>
    </center>
