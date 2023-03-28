@@ -37,7 +37,7 @@ public class FXMLController {
     
     @FXML
     private TextArea txtTime;
-
+ 
     @FXML
     void doInsert(ActionEvent event) {
     	elenco.addParola(this.txtParola.getText());
